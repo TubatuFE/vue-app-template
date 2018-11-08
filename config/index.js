@@ -4,7 +4,7 @@
 
 const path = require('path')
 
-module.exports = {
+const baseConfig = {
   dev: {
 
     // Paths
@@ -74,3 +74,21 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   }
 }
+
+const config = baseConfig;
+if (process.env.APP) {
+  const app = process.env.APP
+  const entry = {}
+  entry[app] = './src/' + app + '-main.js'
+  const appConfig = {
+    entry: entry,
+    index: path.resolve(__dirname, '../dist/' + app + '/index.html'),
+    assetsRoot: path.resolve(__dirname, '../dist/' + app)
+  }
+
+  config.entry =  appConfig.entry
+  config.build.index =  appConfig.index
+  config.build.assetsRoot =  appConfig.assetsRoot
+}
+
+module.exports = config;
