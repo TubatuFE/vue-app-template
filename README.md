@@ -1,31 +1,21 @@
-# vue-app-light
+# 大数据工具
 
-> vue app light template.
+. marquee: 圈选工具
 
-## Build Setup
+## 构建命令
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 启动圈选热加载服务，端口：80
+npm run dev:marquee
 
-# build for production with minification
-npm run build
+# 圈选生产构建
+npm run build:marquee
 
 # build for production and view the bundle analyzer report
-npm run build --report
-```
-
-## Build App
-
-``` bash
-# serve with hot reload at localhost:8080
-npm run dev:app1
-
-# build for production with minification
-npm run build:app1
+npm run build:marquee --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
